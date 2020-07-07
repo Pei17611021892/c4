@@ -261,6 +261,36 @@ float:left;}
                     </ul>
                 </div>
             </div>
+
+            <div class="warning_popup trustBox">
+                <div class="warning_box">
+                    <div class="warning_title">
+                        <p>敬请期待！</p>
+                        <img src="./images/index/close.png" alt="">
+                    </div>
+                    <div class="warning_main">
+                        <p class="warning_dec">
+                            打开 AI 黑盒，构建可信企业级 AI 专场 <br>
+                            将于8月26日 9:30开场，敬请期待
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning_popup dataBox">
+                <div class="warning_box">
+                    <div class="warning_title">
+                        <p>敬请期待！</p>
+                        <img src="./images/index/close.png" alt="">
+                    </div>
+                    <div class="warning_main">
+                        <p class="warning_dec">
+                            掘金复杂数据，让数据为业务所用专场 <br> 
+                            将于10月14日 9:30开场，敬请期待
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -274,6 +304,11 @@ float:left;}
             $('.img.list_close').unbind('click')
             var wdWidth = $(window).width();
             setSubList_animal(wdWidth);
+        })
+
+        // 隐藏trust和data弹框
+        $('.warning_popup .warning_title img').click(function () {
+            $('.warning_popup').hide()
         })
         
     </script>

@@ -15,8 +15,17 @@ function setSubList_animal(wdWidth) {
         })
     }else{
         $('.typeList').click(function () {
-            $(this).children('img.list_right2').toggleClass('sub_rotated')
-            $(this).children('.typeList_cont').slideToggle(100)
+            // $(this).children('img.list_right2').toggleClass('sub_rotated')
+            // $(this).children('.typeList_cont').slideToggle(100)
+            if(!$(this).find('.typeList_cont').is(':hidden')){
+                $(this).children('.typeList_cont').slideUp(100)
+                $(this).children('img.list_right2').removeClass('sub_rotated')
+            }else{
+                $('.typeList').children('.typeList_cont').slideUp(100);
+                $('.typeList').children('img.list_right2').removeClass('sub_rotated')
+                $(this).children('img.list_right2').addClass('sub_rotated')
+                $(this).children('.typeList_cont').slideDown(100)
+            }
         })
     }
 }

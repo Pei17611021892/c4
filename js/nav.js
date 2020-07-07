@@ -4,6 +4,10 @@ $(document).ready(function(){
         if($(this).index() == '0'){
             $('.subMenu').slideToggle(200)
             $(this).children('li').find('p').toggleClass('rotated')
+        }else if($(this).index() == '1'){
+            $('.trustBox').show()
+        }else if($(this).index() == '2'){
+            $('.dataBox').show()
         }
     })
     $('.sub_menu').click(function(event){

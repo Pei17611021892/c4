@@ -14,6 +14,7 @@
 <!-- <link rel="stylesheet" href="https://icon.zhiding.cn/stor-age/special/IBM_C4LT/css/index.css"> -->
 <link rel="stylesheet" href="./css/resCenter.css">
 <link rel="stylesheet" href="./css/nav.css">
+<link rel="stylesheet" href="./css/player.css">
 <!--[if IE 8]>
 <style>
 .container-fluid{ width:1200px; } .col-md-10{ width:83.33333333%; } .col-md-9{ width:75%; } .col-md-8{ width:66.6667%; } .col-md-7{ width:56.3333%;
@@ -128,11 +129,11 @@ float:left;}
                                     <div class="typeList_cont">
                                         <p>
                                             <span class="list_name">混合数据管理</span>
-                                            <span class="playBtn">播放</span>
+                                            <span class="playBtn" data-type="page" data-src="https://www.ibm.com/cn-zh/analytics/data-management">前往</span>
                                         </p>
                                         <p>
                                             <span class="list_name">人工智能数据库</span>
-                                            <span class="playBtn">播放</span>
+                                            <span class="playBtn" data-type="video" data-src="https://cdnapisec.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/39954662/partner_id/1773841?iframeembed=true&playerId=kplayer&entry_id=1_ii7udldc&flashvars[streamerType]=auto">播放</span>
                                         </p>
                                         <p>
                                             <span class="list_name">埃克森美孚和IBM:利用数据为人工智能旅程加油</span>
@@ -431,6 +432,47 @@ float:left;}
                     </ul>
                 </div>
             </div>
+
+            <div class="warning_popup trustBox">
+                <div class="warning_box">
+                    <div class="warning_title">
+                        <p>敬请期待！</p>
+                        <img src="./images/index/close.png" alt="">
+                    </div>
+                    <div class="warning_main">
+                        <p class="warning_dec">
+                            打开 AI 黑盒，构建可信企业级 AI 专场 <br>
+                            将于8月26日 9:30开场，敬请期待
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning_popup dataBox">
+                <div class="warning_box">
+                    <div class="warning_title">
+                        <p>敬请期待！</p>
+                        <img src="./images/index/close.png" alt="">
+                    </div>
+                    <div class="warning_main">
+                        <p class="warning_dec">
+                            掘金复杂数据，让数据为业务所用专场 <br> 
+                            将于10月14日 9:30开场，敬请期待
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="myModal" class="myModal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close_plModel">&times;</span>
+                  <!-- <p>Some text in the Modal..</p> -->
+                  <iframe src="" width="100%" height="528" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0"></iframe>
+                </div>
+              
+              </div>
         </div>
         
     </div>
@@ -446,6 +488,24 @@ float:left;}
                 $('.img.list_close').unbind('click')
                 var wdWidth = $(window).width();
                 setResList_animal(wdWidth);
+            })
+            // 隐藏trust和data弹框
+            $('.warning_popup .warning_title img').click(function () {
+                $('.warning_popup').hide()
+            })
+
+            $('.playBtn').click(function () {
+                if($(this).data('type') == 'page'){
+                    window.open($(this).data('src'),'_blank')
+                }else if($(this).data('type') == 'video'){
+                    $('.myModal .modal-content iframe').attr('src', $(this).data('src'))
+                    $('.myModal').show()
+                }
+            })
+
+            $('.close_plModel').click(function () {
+                $('.myModal').hide()
+                $('.myModal .modal-content iframe').attr('src', '')
             })
     　　}); 
         

@@ -66,10 +66,29 @@ function setResList_animal(wdWidth) {
             canClick = true
         })
     }else{
-        $('.typeList').click(function () {
-            $(this).children('.tpList_box').toggleClass('tpList_box_statck')
-            $(this).children('img.list_right2').toggleClass('res_rotated')
-            $(this).children('.typeList_cont').slideToggle(100)
-        })
-    }
+            $('.typeList').click(function () {
+                if(!$(this).find('.typeList_cont').is(':hidden')){
+                    var self = $(this)
+                    self.children('.typeList_cont').slideUp(100)
+                    var animailTimer = setTimeout(function () {
+                        self.children('.tpList_box').removeClass('tpList_box_statck')
+                        self.children('img.list_right2').removeClass('res_rotated')
+                    },100)
+                }else{
+                    var self = $(this)
+                    $('.typeList').children('.typeList_cont').slideUp(100);
+                    var animailTimer = setTimeout(function () {
+                        $('.typeList').children('.tpList_box').removeClass('tpList_box_statck')
+                        $('.typeList').children('img.list_right2').removeClass('res_rotated')
+                        self.children('.tpList_box').addClass('tpList_box_statck')
+                        self.children('img.list_right2').addClass('res_rotated')
+                        self.children('.typeList_cont').slideDown(100)
+                    },100)
+                    
+                }
+                // $(this).children('.tpList_box').toggleClass('tpList_box_statck')
+                // $(this).children('img.list_right2').toggleClass('res_rotated')
+                // $(this).children('.typeList_cont').slideToggle(100)
+            })
+        }
 }
