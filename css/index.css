@@ -19,7 +19,10 @@
     display: none;
     width: 100%;
 }
-
+.banner_logo{
+    width: 70px;
+    display: none;
+}
 .player{
     width: calc(100% - 250px);
     margin-left: 250px;
@@ -54,6 +57,12 @@
     bottom: 0;
     right: 20px;
 }
+.player_com .player_towntalk .ico1{
+    width: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
 .player_com{
     display: inline-block;
     vertical-align: top;
@@ -64,21 +73,27 @@
 }
 .player_towntalk{
     width: 100%;
-    height: calc(50% - 5px);
+    height: calc(100% - 255px);
     background: #262626;
     padding: 15px;
     position: relative;
 }
 .user_comment{
     width: 100%;
-    height: calc(50% - 5px);
+    height: 245px;
     margin-top: 10px;
     background: #262626;
     padding: 15px;
 }
 .testtext{
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
+}
+.testtext2 {
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    width: 180px;
 }
 
 .fun_list{
@@ -400,6 +415,12 @@
         width: 100%;
         margin-left: 0;
     }
+    .banner_logo{
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        display: block;
+    }
     
 }
 @media screen and (min-width: 320px) and (max-width: 960px){
@@ -412,6 +433,9 @@
     .banner, .player, .fun_list{
         width: 100%;
         margin-left: 0;
+    }
+    .banner_logo{
+        display: none;
     }
     .player_box{
         width: 100%;
@@ -463,6 +487,20 @@
     }
     .testtext{
         font-size: .28rem;
+    }
+    .testtext2 {
+        color: #fff;
+        margin-top: .2rem;
+        font-size: .2rem;
+        display: inline-block;
+        width: 2rem;
+    }
+    .player_com .player_towntalk .ico1 {
+        width: .8rem;
+        position: absolute;
+        bottom: .3rem;
+        left: .3rem;
+        right: auto;
     }
     .guest {
         margin: 0;
